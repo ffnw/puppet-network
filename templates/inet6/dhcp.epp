@@ -1,0 +1,12 @@
+iface <%= $interface %> inet6 dhcp
+<% if $hwaddress { -%>
+  hwaddress <%= $hwaddress %>
+<% } -%>
+<% if $accept_ra { -%>
+  accept_ra <%= $accept_ra %>
+<% } -%>
+<% if $autoconf { -%>
+  autoconf <%= $autoconf %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

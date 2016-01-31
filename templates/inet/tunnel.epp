@@ -1,0 +1,21 @@
+iface <%= $interface %> inet tunnel
+  address <%= $address %>
+  mode <%= $mode %>
+  endpoint <%= $endpoint %>
+<% if $dstaddr { -%>
+  dstaddr <%= $dstaddr %>
+<% } -%>
+<% if $local { -%>
+  local <%= $local %>
+<% } -%>
+<% if $gateway { -%>
+  gateway <%= $gateway %>
+<% } -%>
+<% if $ttl { -%>
+  ttl <%= $ttl %>
+<% } -%>
+<% if $mtu { -%>
+  mtu <%= $mtu %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

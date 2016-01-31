@@ -1,0 +1,6 @@
+iface <%= $interface %> inet wvdial
+<% if $provider { -%>
+  provider <%= $provider %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

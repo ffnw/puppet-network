@@ -1,0 +1,3 @@
+iface <%= $interface %> inet6 manual
+<%= epp('network/iface-events.epp') %>
+

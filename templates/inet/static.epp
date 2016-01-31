@@ -1,0 +1,28 @@
+iface <%= $interface %> inet static
+  address <%= $address %>
+<% if $netmask { -%>
+  netmask <%= $netmask %>
+<% } -%>
+<% if $broadcast { -%>
+  broadcast <%= $broadcast %>
+<% } -%>
+<% if $metric { -%>
+  metric <%= $metric %>
+<% } -%>
+<% if $gateway { -%>
+  gateway <%= $gateway %>
+<% } -%>
+<% if $pointopoint { -%>
+  pointopoint <%= $pointopoint %>
+<% } -%>
+<% if $hwaddress { -%>
+  hwaddress <%= $hwaddress %>
+<% } -%>
+<% if $mtu { -%>
+  mtu <%= $mtu %>
+<% } -%>
+<% if $scope { -%>
+  scope <%= $scope %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

@@ -1,0 +1,9 @@
+iface <%= $interface %> ipx static
+<% if $frame { -%>
+  frame <%= $frame %>
+<% } -%>
+<% if $netnum { -%>
+  netnum <%= $netnum %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

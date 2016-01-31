@@ -1,0 +1,12 @@
+iface <%= $interface %> inet bootp
+<% if $bootfile { -%>
+  bootfile <%= $bootfile %>
+<% } -%>
+<% if $server { -%>
+  server <%= $server %>
+<% } -%>
+<% if $hwaddr { -%>
+  hwaddr <%= $hwaddr %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

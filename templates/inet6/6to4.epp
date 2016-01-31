@@ -1,0 +1,13 @@
+iface <%= $interface %> inet6 6to4
+  local <%= $local %>
+<% if $ttl { -%>
+  ttl <%= $ttl %>
+<% } -%>
+<% if $mtu { -%>
+  mtu <%= $mtu %>
+<% } -%>
+<% if $preferred_lifetime { -%>
+  preferred-lifetime <%= $preferred_lifetime %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

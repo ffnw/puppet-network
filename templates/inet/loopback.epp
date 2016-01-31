@@ -1,0 +1,3 @@
+iface <%= $interface %> inet loopback
+<%= epp('network/iface-events.epp') %>
+

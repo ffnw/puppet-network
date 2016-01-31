@@ -1,0 +1,22 @@
+iface <%= $interface %> can static
+  bitrate <%= $bitrate %>
+<% if $samplepoint { -%>
+  samplepoint <%= $samplepoint %>
+<% } -%>
+<% if $loopback { -%>
+  loopback <%= $loopback %>
+<% } -%>
+<% if $listenonly { -%>
+  listenonly <%= $listenonly %>
+<% } -%>
+<% if $triple { -%>
+  triple <%= $triple %>
+<% } -%>
+<% if $oneshot { -%>
+  oneshot <%= $oneshot %>
+<% } -%>
+<% if $berr { -%>
+  berr <%= $berr %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

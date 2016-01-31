@@ -1,0 +1,12 @@
+iface <%= $interface %> inet ppp
+<% if $provider { -%>
+  provider <%= $provider %>
+<% } -%>
+<% if $unit { -%>
+  unit <%= $unit %>
+<% } -%>
+<% if $options { -%>
+  options <%= $options %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

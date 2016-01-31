@@ -1,0 +1,23 @@
+iface <%= $interface %> inet6 v4tunnel
+  address <%= $address %>
+<% if $netmask { -%>
+  netmask <%= $netmask %>
+<% } -%>
+  endpoint <%= $endpoint %>
+<% if $local { -%>
+  local <%= $local %>
+<% } -%>
+<% if $gateway { -%>
+  gateway <%= $gateway %>
+<% } -%>
+<% if $ttl { -%>
+  ttl <%= $ttl %>
+<% } -%>
+<% if $mtu { -%>
+  mtu <%= $mtu %>
+<% } -%>
+<% if $preferred_lifetime { -%>
+  preferred-lifetime <%= $preferred_lifetime %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

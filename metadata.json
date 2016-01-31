@@ -1,0 +1,16 @@
+{
+  "name": "ffnw-network",
+  "version": "0.1.0",
+  "author": "Simon Kurka",
+  "summary": "Manages network interfaces.",
+  "license": "GPLv2",
+  "source": "https://github.com/ffnw/puppet-network.git",
+  "project_page": "https://github.com/ffnw/puppet-network",
+  "issues_url": "https://github.com/ffnw/puppet-network/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-concat","version_requirement":">= 2.1.0"}
+  ],
+  "data_provider": null
+}
+

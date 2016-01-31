@@ -1,0 +1,6 @@
+# DO NOT EDIT!
+# This file is puppet generated.
+
+auto lo
+iface lo inet loopback
+

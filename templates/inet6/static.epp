@@ -1,0 +1,40 @@
+iface <%= $interface %> inet6 static
+  address <%= $address %>
+<% if $netmask { -%>
+  netmask <%= $netmask %>
+<% } -%>
+<% if $gateway { -%>
+  gateway <%= $gateway %>
+<% } -%>
+<% if $media { -%>
+  media <%= $media %>
+<% } -%>
+<% if $hwaddress { -%>
+  hwaddress <%= $hwaddress %>
+<% } -%>
+<% if $mtu { -%>
+  mtu <%= $mtu %>
+<% } -%>
+<% if $accept_ra { -%>
+  accept_ra <%= $accept_ra %>
+<% } -%>
+<% if $autoconf { -%>
+  autoconf <%= $autoconf %>
+<% } -%>
+<% if $privext { -%>
+  privext <%= $privext %>
+<% } -%>
+<% if $scope { -%>
+  scope <%= $scope %>
+<% } -%>
+<% if $preferred_lifetime { -%>
+  preferred-lifetime <%= $preferred_lifetime %>
+<% } -%>
+<% if $dad_attempts { -%>
+  dad-attempts <%= $dad_attempts %>
+<% } -%>
+<% if $dad_interval { -%>
+  dad-interval <%= $dad_interval %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

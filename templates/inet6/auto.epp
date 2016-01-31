@@ -1,0 +1,12 @@
+iface <%= $interface %> inet6 auto
+<% if $privext { -%>
+  privext <%= $privext %>
+<% } -%>
+<% if $accept_ra { -%>
+  accept_ra <%= $accept_ra %>
+<% } -%>
+<% if $dhcp { -%>
+  dhcp <%= $dhcp %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

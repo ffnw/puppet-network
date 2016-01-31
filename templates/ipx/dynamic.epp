@@ -1,0 +1,6 @@
+iface <%= $interface %> ipx dynamic
+<% if $frame { -%>
+  frame <%= $frame %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+

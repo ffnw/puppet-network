@@ -1,0 +1,4 @@
+# DO NOT EDIT!
+# This file is puppet generated.
+
+<%= $method %> <%= $interface %>

@@ -1,0 +1,24 @@
+iface <%= $interface %> inet dhcp
+<% if $hostname { -%>
+  hostname <%= $hostname %>
+<% } -%>
+<% if $metric { -%>
+  metric <%= $metric %>
+<% } -%>
+<% if $leasehours { -%>
+  leasehours <%= $leasehours %>
+<% } -%>
+<% if $leasetime { -%>
+  leasetime <%= $leasetime %>
+<% } -%>
+<% if $vendor { -%>
+  vendor <%= $vendor %>
+<% } -%>
+<% if $client { -%>
+  client <%= $client %>
+<% } -%>
+<% if $hwaddress { -%>
+  hwaddress <%= $hwaddress %>
+<% } -%>
+<%= epp('network/iface-events.epp') %>
+
