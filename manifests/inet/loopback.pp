@@ -1,5 +1,5 @@
 class network::inet::loopback (
-  String        $interface,
+  String        $interface = $title,
   Array[String] $pre_up    = [],
   Array[String] $up        = [],
   Array[String] $post_up   = [],

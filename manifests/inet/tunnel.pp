@@ -1,5 +1,5 @@
 define network::inet::tunnel (
-  String            $interface,
+  String            $interface = $title,
   String            $address,
   String            $mode,
   String            $endpoint,

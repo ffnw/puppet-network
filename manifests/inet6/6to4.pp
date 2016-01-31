@@ -1,5 +1,5 @@
 define network::inet6::6to4 (
-  String            $interface,
+  String            $interface          = $title,
   String            $local,
   Optional[Integer] $ttl                = undef,
   Optional[Integer] $mtu                = undef,

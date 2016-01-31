@@ -1,5 +1,5 @@
 define network::inet6::v4tunnel (
-  String                   $interface,
+  String                   $interface          = $title,
   String                   $address,
   Optional[Integer[0,128]] $netmask            = undef,
   String                   $endpoint,

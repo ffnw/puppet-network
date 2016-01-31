@@ -1,5 +1,5 @@
 define network::inet::static (
-  String            $interface,
+  String            $interface   = $title,
   String            $address,
   Optional[String]  $netmask     = undef,
   Optional[String]  $broadcast   = undef,

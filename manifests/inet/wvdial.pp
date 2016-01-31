@@ -1,5 +1,5 @@
 define network::inet::wvdial (
-  String           $interface,
+  String           $interface = $title,
   Optional[String] $provider  = undef,
   Array[String]    $pre_up    = [],
   Array[String]    $up        = [],

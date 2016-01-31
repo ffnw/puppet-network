@@ -1,5 +1,5 @@
 define network::inet::dhcp (
-  String            $interface,
+  String            $interface  = $title,
   Optional[String]  $hostname   = undef,
   Optional[Integer] $metric     = undef,
   Optional[Integer] $leasehours = undef,

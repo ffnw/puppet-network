@@ -1,5 +1,5 @@
 define network::inet6::auto (
-  String                 $interface,
+  String                 $interface = $title,
   Optional[Integer[0,2]] $privext   = undef,
   Optional[Integer[0,2]] $accept_ra = undef,
   Optional[Integer[0,1]] $dhcp      = undef,

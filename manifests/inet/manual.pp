@@ -1,11 +1,11 @@
 define network::inet::manual (
-  String        $interface,
-  Array[String] $pre_up      = [],
-  Array[String] $up          = [],
-  Array[String] $post_up     = [],
-  Array[String] $pre_down    = [],
-  Array[String] $down        = [],
-  Array[String] $post_down   = [],
+  String        $interface = $title,
+  Array[String] $pre_up    = [],
+  Array[String] $up        = [],
+  Array[String] $post_up   = [],
+  Array[String] $pre_down  = [],
+  Array[String] $down      = [],
+  Array[String] $post_down = [],
 ) {
 
   include network

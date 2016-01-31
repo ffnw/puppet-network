@@ -1,5 +1,5 @@
 define network::ipx::static (
-  String            $interface,
+  String            $interface = $title,
   Optional[String]  $frame     = undef,
   Optional[Integer] $netnum    = undef,
   Array[String]     $pre_up    = [],

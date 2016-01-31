@@ -1,5 +1,5 @@
 define network::ipx::dynamic (
-  String           $interface,
+  String           $interface = $title,
   Optional[String] $frame     = undef,
   Array[String]    $pre_up    = [],
   Array[String]    $up        = [],

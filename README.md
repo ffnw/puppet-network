@@ -58,7 +58,7 @@ network::family::method { 'unique_name':
 Example:
 ```puppet
 network::inet::static { 'eth0-default-ip':
-  interface => 'eth0',
+  interface => 'eth0', # Defaults to title
   address   => '192.168.1.1/24',
 }
 ```
@@ -72,8 +72,7 @@ class { 'network::inet::loopback':
 
 Every iface definition takes optional arguments for interface events.
 ```puppet
-network::inet::static { 'eth0-default-ip':
-  interface => 'eth0',
+network::inet::static { 'eth0':
   address   => '192.168.1.1/24',
   pre_up    => [ 'cmd1', 'cmd2' ],
   up        => [ 'cmd1', 'cmd2' ],

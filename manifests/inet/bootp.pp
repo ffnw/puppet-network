@@ -1,5 +1,5 @@
 define network::inet::bootp (
-  String           $interface,
+  String           $interface = $title,
   Optional[String] $bootfile  = undef,
   Optional[String] $server    = undef,
   Optional[String] $hwaddr    = undef,

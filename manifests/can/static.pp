@@ -1,5 +1,5 @@
 define network::can::static (
-  String             $interface,
+  String             $interface   = $title,
   Integer[1,1000000] $bitrate,
   Numeric[0,0.999]   $samplepoint = undef,
   String             $loopback    = undef,

@@ -1,5 +1,5 @@
 define network::inet::ppp (
-  String            $interface,
+  String            $interface = $title,
   Optional[String]  $provider  = undef,
   Optional[Integer] $unit      = undef,
   Optional[String]  $options   = undef,

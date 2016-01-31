@@ -1,5 +1,5 @@
 define network::inet6::dhcp (
-  String                 $interface,
+  String                 $interface = $title,
   Optional[String]       $hwaddress = undef,
   Optional[Integer[0,2]] $accept_ra = undef,
   Optional[Integer[0,1]] $autoconf  = undef,
