@@ -26,7 +26,7 @@ This module affects the network configuration. You have to reconfigure your defa
 ### Beginning with network
 
 ```puppet
-class { '::network': }
+class { 'network': }
 ```
 
 Do not forget to reconfigure the default interfaces.
