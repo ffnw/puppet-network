@@ -25,7 +25,7 @@ define network::loopback_event (
   concat::fragment { "network_loopback_${title}":
     target  => "${network::interfaces_d}/${interface}",
     content => "  ${event} ${cmd}",
-    order   => "${order}",
+    order   => $order,
   }
   
 }
