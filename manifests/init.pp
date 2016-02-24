@@ -2,7 +2,9 @@ class network (
   String $interfaces_d = $network::params::interfaces_d,
 ) inherits network::params {
 
-  require network::install
+  class { 'network::install': }
+
+  contain network::install
 
   create_resources('network::can::static',     hiera('network::can::static',     {}))
 
