@@ -20,7 +20,18 @@ define network::inet6::auto (
 
   concat::fragment { "network_inet6_auto_${interface}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet6/auto.epp'),
+    content => epp('network/inet6/auto.epp', {
+      interface => $interface,
+      privext   => $privext,
+      accept_ra => $accept_ra,
+      dhcp      => $dhcp,
+      pre_up    => $pre_up,
+      up        => $up,
+      post_up   => $post_up,
+      pre_down  => $pre_down,
+      down      => $down,
+      post_down => $post_down,
+    }),
     order   => '20',
   }
 

@@ -20,7 +20,18 @@ define network::inet6::dhcp (
 
   concat::fragment { "network_inet6_dhcp_${interface}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet6/dhcp.epp'),
+    content => epp('network/inet6/dhcp.epp', {
+      interface => $interface,
+      hwaddress => $hwaddress,
+      accept_ra => $accept_ra,
+      autoconf  => $autoconf,
+      pre_up    => $pre_up,
+      up        => $up,
+      post_up   => $post_up,
+      pre_down  => $pre_down,
+      down      => $down,
+      post_down => $post_down,
+    }),
     order   => '20',
   }
 

@@ -1,3 +1,14 @@
+<%- | $interface,
+      $privext,
+      $accept_ra,
+      $dhcp,
+      $pre_up,
+      $up,
+      $post_up,
+      $pre_down,
+      $down,
+      $post_down,
+| -%>
 iface <%= $interface %> inet6 auto
 <% if $privext { -%>
   privext <%= $privext %>
@@ -8,5 +19,12 @@ iface <%= $interface %> inet6 auto
 <% if $dhcp { -%>
   dhcp <%= $dhcp %>
 <% } -%>
-<%= epp('network/iface_events.epp') %>
+<%= epp('network/iface_events.epp', {
+  pre_up    => $pre_up,
+  up        => $up,
+  post_up   => $post_up,
+  pre_down  => $pre_down,
+  down      => $down,
+  post_down => $post_down,
+}) %>
 

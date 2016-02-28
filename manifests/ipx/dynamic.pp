@@ -18,7 +18,16 @@ define network::ipx::dynamic (
 
   concat::fragment { "network_ipx_dynamic_${interface}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/ipx/dynamic.epp'),
+    content => epp('network/ipx/dynamic.epp', {
+      interface => $interface,
+      frame     => $frame,
+      pre_up    => $pre_up,
+      up        => $up,
+      post_up   => $post_up,
+      pre_down  => $pre_down,
+      down      => $down,
+      post_down => $post_down,
+    }),
     order   => '20',
   }
 

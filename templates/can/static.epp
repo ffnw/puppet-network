@@ -1,3 +1,18 @@
+<%- | $interface,
+      $bitrate,
+      $samplepoint,
+      $loopback,
+      $listenonly,
+      $triple,
+      $oneshot,
+      $berr,
+      $pre_up,
+      $up,
+      $post_up,
+      $pre_down,
+      $down,
+      $post_down,
+| -%>
 iface <%= $interface %> can static
   bitrate <%= $bitrate %>
 <% if $samplepoint { -%>
@@ -18,5 +33,12 @@ iface <%= $interface %> can static
 <% if $berr { -%>
   berr <%= $berr %>
 <% } -%>
-<%= epp('network/iface_events.epp') %>
+<%= epp('network/iface_events.epp', {
+  pre_up    => $pre_up,
+  up        => $up,
+  post_up   => $post_up,
+  pre_down  => $pre_down,
+  down      => $down,
+  post_down => $post_down,
+}) %>
 

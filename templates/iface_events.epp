@@ -1,3 +1,10 @@
+<%- | Array[String] $pre_up,
+      Array[String] $up,
+      Array[String] $post_up,
+      Array[String] $pre_down,
+      Array[String] $down,
+      Array[String] $post_down,
+| -%>
 <% $pre_up.each | $cmd | { -%>
   pre-up $cmd
 <% } -%>

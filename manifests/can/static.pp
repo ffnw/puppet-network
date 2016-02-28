@@ -24,7 +24,22 @@ define network::can::static (
 
   concat::fragment { "network_can_static_${interface}_${bitrate}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/can/static.epp'),
+    content => epp('network/can/static.epp', {
+      interface   => $interface,
+      bitrate     => $bitrate,
+      samplepoint => $samplepoint,
+      loopback    => $loopback,
+      listenonly  => $listenonly,
+      triple      => $triple,
+      oneshot     => $oneshot,
+      berr        => $berr,
+      pre_up      => $pre_up,
+      up          => $up,
+      post_up     => $post_up,
+      pre_down    => $pre_down,
+      down        => $down,
+      post_down   => $post_down,
+    }),
     order   => '20',
   }
 

@@ -1,3 +1,24 @@
+<%- | $interface,
+      $address,
+      $netmask,
+      $gateway,
+      $media,
+      $hwaddress,
+      $mtu,
+      $accept_ra,
+      $autoconf,
+      $privext,
+      $scope,
+      $preferred_lifetime,
+      $dad_attempts,
+      $dad_interval,
+      $pre_up,
+      $up,
+      $post_up,
+      $pre_down,
+      $down,
+      $post_down,
+| -%>
 iface <%= $interface %> inet6 static
   address <%= $address %>
 <% if $netmask { -%>
@@ -36,5 +57,12 @@ iface <%= $interface %> inet6 static
 <% if $dad_interval { -%>
   dad-interval <%= $dad_interval %>
 <% } -%>
-<%= epp('network/iface_events.epp') %>
+<%= epp('network/iface_events.epp', {
+  pre_up    => $pre_up,
+  up        => $up,
+  post_up   => $post_up,
+  pre_down  => $pre_down,
+  down      => $down,
+  post_down => $post_down,
+}) %>
 

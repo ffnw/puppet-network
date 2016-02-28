@@ -17,7 +17,15 @@ define network::inet::ipv4ll (
 
   concat::fragment { "network_inet_ipv4ll_${interface}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet/ipv4ll.epp'),
+    content => epp('network/inet/ipv4ll.epp', {
+      interface => $interface,
+      pre_up    => $pre_up,
+      up        => $up,
+      post_up   => $post_up,
+      pre_down  => $pre_down,
+      down      => $down,
+      post_down => $post_down,
+    }),
     order   => '20',
   }
 

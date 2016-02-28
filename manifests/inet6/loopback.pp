@@ -14,7 +14,15 @@ class network::inet6::loopback (
 
   concat::fragment { "network_inet6_loopback":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet6/loopback.epp'),
+    content => epp('network/inet6/loopback.epp', {
+      interface => $interface,
+      pre_up    => $pre_up,
+      up        => $up,
+      post_up   => $post_up,
+      pre_down  => $pre_down,
+      down      => $down,
+      post_down => $post_down,
+    }),
     order   => '40',
   }
 

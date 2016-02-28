@@ -1,3 +1,20 @@
+<%- | $interface,
+      $address,
+      $netmask,
+      $broadcast,
+      $metric,
+      $gateway,
+      $pointopoint,
+      $hwaddress,
+      $mtu,
+      $scope,
+      $pre_up,
+      $up,
+      $post_up,
+      $pre_down,
+      $down,
+      $post_down,
+| -%>
 iface <%= $interface %> inet static
   address <%= $address %>
 <% if $netmask { -%>
@@ -24,5 +41,12 @@ iface <%= $interface %> inet static
 <% if $scope { -%>
   scope <%= $scope %>
 <% } -%>
-<%= epp('network/iface_events.epp') %>
+<%= epp('network/iface_events.epp', {
+  pre_up    => $pre_up,
+  up        => $up,
+  post_up   => $post_up,
+  pre_down  => $pre_down,
+  down      => $down,
+  post_down => $post_down,
+}) %>
 

@@ -25,7 +25,23 @@ define network::inet6::v4tunnel (
 
   concat::fragment { "network_inet6_v4tunnel_${interface}_${address}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet6/v4tunnel.epp'),
+    content => epp('network/inet6/v4tunnel.epp', {
+      interface          => $interface,
+      address            => $address,
+      netmask            => $netmask,
+      endpoint           => $endpoint,
+      local              => $local,
+      gateway            => $gateway,
+      ttl                => $ttl,
+      mtu                => $mtu,
+      preferred_lifetime => $preferred_lifetime,
+      pre_up             => $pre_up,
+      up                 => $up,
+      post_up            => $post_up,
+      pre_down           => $pre_down,
+      down               => $down,
+      post_down          => $post_down,
+    }),
     order   => '20',
   }
 

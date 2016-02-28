@@ -24,7 +24,22 @@ define network::inet::dhcp (
 
   concat::fragment { "network_inet_dhcp_${interface}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet/dhcp.epp'),
+    content => epp('network/inet/dhcp.epp', {
+      interface  => $interface,
+      hostname   => $hostname,
+      metric     => $metric,
+      leasehours => $leasehours,
+      leasetime  => $leasetime,
+      vendor     => $vendor,
+      client     => $client,
+      hwaddress  => $hwaddress,
+      pre_up     => $pre_up,
+      up         => $up,
+      post_up    => $post_up,
+      pre_down   => $pre_down,
+      down       => $down,
+      post_down  => $post_down,
+    }),
     order   => '20',
   }
 

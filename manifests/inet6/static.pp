@@ -30,7 +30,28 @@ define network::inet6::static (
 
   concat::fragment { "network_inet6_static_${interface}_${address}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet6/static.epp'),
+    content => epp('network/inet6/static.epp', {
+      interface          => $interface,
+      address            => $address,
+      netmask            => $netmask,
+      gateway            => $gateway,
+      media              => $media,
+      hwaddress          => $hwaddress,
+      mtu                => $mtu,
+      accept_ra          => $accept_ra,
+      autoconf           => $autoconf,
+      privext            => $privext,
+      scope              => $scope,
+      preferred_lifetime => $preferred_lifetime,
+      dad_attempts       => $dad_attempts,
+      dad_interval       => $dad_interval,
+      pre_up             => $pre_up,
+      up                 => $up,
+      post_up            => $post_up,
+      pre_down           => $pre_down,
+      down               => $down,
+      post_down          => $post_down,
+    }),
     order   => '20',
   }
 

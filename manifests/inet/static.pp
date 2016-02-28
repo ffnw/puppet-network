@@ -26,7 +26,24 @@ define network::inet::static (
 
   concat::fragment { "network_inet_static_${interface}_${address}":
     target  => "${network::interfaces_d}/${interface}",
-    content => epp('network/inet/static.epp'),
+    content => epp('network/inet/static.epp', {
+      interface   => $interface,
+      address     => $address,
+      netmask     => $netmask,
+      broadcast   => $broadcast,
+      metric      => $metric,
+      gateway     => $gateway,
+      pointopoint => $pointopoint,
+      hwaddress   => $hwaddress,
+      mtu         => $mtu,
+      scope       => $scope,
+      pre_up      => $pre_up,
+      up          => $up,
+      post_up     => $post_up,
+      pre_down    => $pre_down,
+      down        => $down,
+      post_down   => $post_down,
+    }),
     order   => '20',
   }
 
