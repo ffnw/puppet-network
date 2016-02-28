@@ -11,7 +11,7 @@ define network::loopback_event (
     $interface = $network::inet6::loopback::interface
     $order = 50
   } else {
-    fail('$family is not inet nor inet6');
+    fail('$family is not inet nor inet6')
   }
   
   $add = [ 'pre-up' => 1,
