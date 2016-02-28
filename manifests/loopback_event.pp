@@ -14,12 +14,12 @@ define network::loopback_event (
     fail('$family is not inet nor inet6')
   }
   
-  $add = [ 'pre-up' => 1,
+  $add = { 'pre-up' => 1,
            'up' => 2,
            'post-up' => 3,
            'pre-down' => 4,
            'down' => 5,
-           'post-down' => 6, ]
+           'post-down' => 6, }
   $final_order = $order + $add[$event]
 
   concat::fragment { "network_loopback_${title}":
