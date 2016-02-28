@@ -2,7 +2,7 @@ define network::inet::loopback::post_down (
   String $cmd,
 ) {
 
-  require network::inet::loopback
+  include network::inet::loopback
 
   network::loopback_event { "inet_post-down_${title}":
     family => 'inet',

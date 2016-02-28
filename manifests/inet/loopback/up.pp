@@ -2,7 +2,7 @@ define network::inet::loopback::up (
   String $cmd,
 ) {
 
-  require network::inet::loopback
+  include network::inet::loopback
 
   network::loopback_event { "inet_up_${title}":
     family => 'inet',
