@@ -20,12 +20,12 @@ define network::loopback_event (
            'pre-down' => 4,
            'down' => 5,
            'post-down' => 6, ]
-  $order = $order + $add[$event]
+  $final_order = $order + $add[$event]
 
   concat::fragment { "network_loopback_${title}":
     target  => "${network::interfaces_d}/${interface}",
     content => "  ${event} ${cmd}",
-    order   => $order,
+    order   => $final_order,
   }
   
 }
