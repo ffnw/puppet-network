@@ -18,5 +18,5 @@ iface <%= $interface %> can static
 <% if $berr { -%>
   berr <%= $berr %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

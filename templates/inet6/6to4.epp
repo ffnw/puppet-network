@@ -9,5 +9,5 @@ iface <%= $interface %> inet6 6to4
 <% if $preferred_lifetime { -%>
   preferred-lifetime <%= $preferred_lifetime %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

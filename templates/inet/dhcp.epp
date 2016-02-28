@@ -20,5 +20,5 @@ iface <%= $interface %> inet dhcp
 <% if $hwaddress { -%>
   hwaddress <%= $hwaddress %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

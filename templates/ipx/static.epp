@@ -5,5 +5,5 @@ iface <%= $interface %> ipx static
 <% if $netnum { -%>
   netnum <%= $netnum %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

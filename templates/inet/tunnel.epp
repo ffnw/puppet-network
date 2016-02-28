@@ -17,5 +17,5 @@ iface <%= $interface %> inet tunnel
 <% if $mtu { -%>
   mtu <%= $mtu %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

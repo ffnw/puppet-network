@@ -8,5 +8,5 @@ iface <%= $interface %> inet6 dhcp
 <% if $autoconf { -%>
   autoconf <%= $autoconf %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

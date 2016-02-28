@@ -36,5 +36,5 @@ iface <%= $interface %> inet6 static
 <% if $dad_interval { -%>
   dad-interval <%= $dad_interval %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

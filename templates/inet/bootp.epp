@@ -8,5 +8,5 @@ iface <%= $interface %> inet bootp
 <% if $hwaddr { -%>
   hwaddr <%= $hwaddr %>
 <% } -%>
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 

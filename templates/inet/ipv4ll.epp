@@ -1,3 +1,3 @@
 iface <%= $interface %> inet ipv4ll
-<%= epp('network/iface-events.epp') %>
+<%= epp('network/iface_events.epp') %>
 
