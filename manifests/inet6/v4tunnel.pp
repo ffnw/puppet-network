@@ -19,7 +19,9 @@ define network::inet6::v4tunnel (
   include network
   include network::params
 
-  network::interface { "${interface}~default": }
+  if(!defined(Network::Interface["${interface}~default"]) {
+    network::interface { "${interface}~default": }
+  }
 
   concat::fragment { "network_inet6_v4tunnel_${interface}_${address}":
     target  => "${network::interfaces_d}/${interface}",

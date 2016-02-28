@@ -8,7 +8,9 @@ class network::inet::loopback (
   Array[String] $post_down = [],
 ) inherits network {
 
-  network::interface { "${interface}~default": }
+  if(!defined(Network::Interface["${interface}~default"]) {
+    network::interface { "${interface}~default": }
+  }
 
   concat::fragment { "network_inet_loopback":
     target  => "${network::interfaces_d}/${interface}",

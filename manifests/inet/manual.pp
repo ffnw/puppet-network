@@ -11,7 +11,9 @@ define network::inet::manual (
   include network
   include network::params
 
-  network::interface { "${interface}~default": }
+  if(!defined(Network::Interface["${interface}~default"]) {
+    network::interface { "${interface}~default": }
+  }
 
   concat::fragment { "network_inet_manual_${interface}":
     target  => "${network::interfaces_d}/${interface}",

@@ -15,7 +15,9 @@ define network::inet6::6to4 (
   include network
   include network::params
 
-  network::interface { "${interface}~default": }
+  if(!defined(Network::Interface["${interface}~default"]) {
+    network::interface { "${interface}~default": }
+  }
 
   concat::fragment { "network_inet6_6to4_${interface}_${local}":
     target  => "${network::interfaces_d}/${interface}",
