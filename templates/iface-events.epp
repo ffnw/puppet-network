@@ -1,18 +1,18 @@
-<% $pre-up.each | $cmd | { -%>
+<% $pre_up.each | $cmd | { -%>
   pre-up $cmd
 <% } -%>
 <% $up.each | $cmd | { -%>
   up $cmd
 <% } -%>
-<% $post-up.each | $cmd | { -%>
+<% $post_up.each | $cmd | { -%>
   post-up $cmd
 <% } -%>
-<% $pre-down.each | $cmd | { -%>
+<% $pre_down.each | $cmd | { -%>
   pre-down $cmd
 <% } -%>
 <% $down.each | $cmd | { -%>
   down $cmd
 <% } -%>
-<% $post-down.each | $cmd | { -%>
+<% $post_down.each | $cmd | { -%>
   post-down $cmd
 <% } -%>
