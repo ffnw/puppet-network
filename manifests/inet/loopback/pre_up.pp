@@ -5,8 +5,9 @@ define network::inet::loopback::pre_up (
   require network::inet::loopback
 
   network::loopback_event { "inet_pre-up_${title}":
-    event => 'pre-up',
-    cmd   => $cmd,
+    family => 'inet',
+    event  => 'pre-up',
+    cmd    => $cmd,
   }
 
 }

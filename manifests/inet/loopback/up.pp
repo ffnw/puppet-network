@@ -5,8 +5,9 @@ define network::inet::loopback::up (
   require network::inet::loopback
 
   network::loopback_event { "inet_up_${title}":
-    event => 'up',
-    cmd   => $cmd,
+    family => 'inet',
+    event  => 'up',
+    cmd    => $cmd,
   }
 
 }
