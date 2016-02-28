@@ -7,7 +7,7 @@ define network::loopback_event (
   if $family == 'inet' {
     $interface = $network::inet::loopback::interface
     $order = 30
-  } else if $family == 'inet6' {
+  } elsif $family == 'inet6' {
     $interface = $network::inet6::loopback::interface
     $order = 50
   } else {
