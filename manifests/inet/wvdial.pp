@@ -12,7 +12,7 @@ define network::inet::wvdial (
   include network
   include network::params
 
-  if(!defined(Network::Interface["${interface}~default"]) {
+  if(!defined(Network::Interface["${interface}~default"])) {
     network::interface { "${interface}~default": }
   }
 

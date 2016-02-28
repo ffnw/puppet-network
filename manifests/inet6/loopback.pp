@@ -8,7 +8,7 @@ class network::inet6::loopback (
   Array[String] $post_down = [],
 ) inherits network {
 
-  if(!defined(Network::Interface["${interface}~default"]) {
+  if(!defined(Network::Interface["${interface}~default"])) {
     network::interface { "${interface}~default": }
   }
 

@@ -14,7 +14,7 @@ define network::inet6::dhcp (
   include network
   include network::params
 
-  if(!defined(Network::Interface["${interface}~default"]) {
+  if(!defined(Network::Interface["${interface}~default"])) {
     network::interface { "${interface}~default": }
   }
 
