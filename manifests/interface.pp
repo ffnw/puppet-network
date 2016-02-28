@@ -5,7 +5,7 @@ define network::interface (
   include network
   include network::params
 
-  $interface = $title.match('^(\\w+)(?:~default)?$')[1]
+  $interface = $title.match('^([\\w-]+)(?:~default)?$')[1]
   $target = "${network::interfaces_d}/${interface}"
 
   concat { $target:
