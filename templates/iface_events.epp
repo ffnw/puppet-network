@@ -6,20 +6,20 @@
       Array[String] $post_down,
 | -%>
 <% $pre_up.each | $cmd | { -%>
-  pre-up $cmd
+  pre-up <%= $cmd %>
 <% } -%>
 <% $up.each | $cmd | { -%>
-  up $cmd
+  up <%= $cmd %>
 <% } -%>
 <% $post_up.each | $cmd | { -%>
-  post-up $cmd
+  post-up <%= $cmd %>
 <% } -%>
 <% $pre_down.each | $cmd | { -%>
-  pre-down $cmd
+  pre-down <%= $cmd %>
 <% } -%>
 <% $down.each | $cmd | { -%>
-  down $cmd
+  down <%= $cmd %>
 <% } -%>
 <% $post_down.each | $cmd | { -%>
-  post-down $cmd
+  post-down <= $cmd %>
 <% } -%>
