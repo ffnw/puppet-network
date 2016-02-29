@@ -26,7 +26,7 @@ define network::interface (
     }
     concat::fragment { "network_${title}":
       target  => $target,
-      content => epp('network/interface.epp'),
+      content => epp('network/interface.epp', { method => $method, interface => $interface }),
       order   => '10',
     }
   } else {

@@ -15,7 +15,7 @@ class network::install inherits network {
     '/etc/network/interfaces':
       ensure  => file,
       mode    => '0644',
-      content => epp('network/interfaces.epp'),
+      content => epp('network/interfaces.epp', { interfaces_d => $interfaces_d }),
       notify  => Service['networking'],
   }
 
