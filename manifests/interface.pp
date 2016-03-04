@@ -16,7 +16,7 @@ define network::interface (
     }
   }
 
-  if !defined(Concat::Fragment["network_${title}"]) {
+  if !defined(Concat::Fragment["network_${title}"]) and !defined(Concat::Fragment["network_${interface}"]) {
     # Only create the fragment if there is no such fragment for the interface
     # Overwrite a default fragment when present
     if defined(Concat::Fragment["network_${interface}~default"]) {
