@@ -8,10 +8,12 @@ define network::interface (
   $interface = $title.match('^([\\w-]+)(?:~default)?$')[1]
   $target = "${network::interfaces_d}/${interface}"
 
-  concat { $target:
-    ensure         => 'present',
-    ensure_newline => true,
-    notify         => File['/etc/network/interfaces'],
+  if(!defined(Concat[$target]) {
+    concat { $target:
+      ensure         => 'present',
+      ensure_newline => true,
+      notify         => File['/etc/network/interfaces'],
+    }
   }
 
   if !defined(Concat::Fragment["network_${title}"]) {
