@@ -1,5 +1,6 @@
 <%- | $interface,
       $address,
+      $netmask,
       $mode,
       $endpoint,
       $dstaddr,
@@ -16,6 +17,7 @@
 | -%>
 iface <%= $interface %> inet tunnel
   address <%= $address %>
+  netmask <%= $netmask %>
   mode <%= $mode %>
   endpoint <%= $endpoint %>
 <% if $dstaddr { -%>

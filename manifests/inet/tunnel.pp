@@ -1,6 +1,7 @@
 define network::inet::tunnel (
   String            $interface = $title,
   String            $address,
+  String            $netmask, # UNDOCUMENTED NEEDED PARAMETER!
   String            $mode,
   String            $endpoint,
   Optional[String]  $dstaddr   = undef,
@@ -28,6 +29,7 @@ define network::inet::tunnel (
     content => epp('network/inet/tunnel.epp', {
       interface => $interface,
       address   => $address,
+      netmask   => $netmask, # UNDOCUMENTED NEEDED PARAMETER!
       mode      => $mode,
       endpoint  => $endpoint,
       dstaddr   => $dstaddr,
