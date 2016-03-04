@@ -28,7 +28,7 @@ define network::ipx::dynamic (
       down      => $down,
       post_down => $post_down,
     }),
-    order   => '20',
+    order   => '30',
   }
 
 }

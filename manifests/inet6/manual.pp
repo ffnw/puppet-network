@@ -26,7 +26,7 @@ define network::inet6::manual (
       down      => $down,
       post_down => $post_down,
     }),
-    order   => '20',
+    order   => '40',
   }
 
 }
