@@ -8,7 +8,7 @@ define network::interface (
   $interface = $title.match('^([\\w-]+)(?:~default)?$')[1]
   $target = "${network::interfaces_d}/${interface}"
 
-  if(!defined(Concat[$target]) {
+  if(!defined(Concat[$target])) {
     concat { $target:
       ensure         => 'present',
       ensure_newline => true,
