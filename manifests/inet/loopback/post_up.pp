@@ -1,5 +1,5 @@
 define network::inet::loopback::post_up (
-  String $cmd,
+  String $cmd = $title,
 ) {
 
   include network::inet::loopback

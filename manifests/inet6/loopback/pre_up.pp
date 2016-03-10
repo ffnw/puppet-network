@@ -1,5 +1,5 @@
 define network::inet6::loopback::pre_up (
-  String $cmd,
+  String $cmd = $title,
 ) {
 
   include network::inet6::loopback

@@ -1,5 +1,5 @@
 define network::inet::loopback::down (
-  String $cmd,
+  String $cmd = $title,
 ) {
 
   include network::inet::loopback
