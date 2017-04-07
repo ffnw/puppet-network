@@ -1,5 +1,5 @@
 <%- | $interface,
-      $provider  = undef,
+      $provider  = false,
       $pre_up,
       $up,
       $post_up,
