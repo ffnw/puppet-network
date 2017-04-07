@@ -1,6 +1,6 @@
 <%- | $interface,
-      $frame     = undef,
-      $netnum    = undef,
+      $frame     = false,
+      $netnum    = false,
       $pre_up,
       $up,
       $post_up,
