@@ -1,5 +1,5 @@
 <%- | $interface,
-      $frame     = undef,
+      $frame     = false,
       $pre_up,
       $up,
       $post_up,
